@@ -2,6 +2,7 @@
   import readingTime from 'reading-time';
   import BannerImage from '$lib/components/BannerImage.svelte';
   import SEO from '$lib/components/SEO/index.svelte';
+  import ShareButtons from '$lib/components/ShareButtons/index.svelte';
 
   export let imageData;
   export let post;
@@ -71,3 +72,4 @@
 
 <BannerImage {imageData} />
 <h1>{title}</h1>
+<ShareButtons {slug} {title} />
