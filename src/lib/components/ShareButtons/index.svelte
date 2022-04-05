@@ -1,11 +1,11 @@
 <script>
+  import { browser } from '$app/env';
+  import ShareIcon from '$lib/components/Icons/Share.svelte';
   import Facebook from '$lib/components/ShareButtons/Facebook.svelte';
+  import Telegram from '$lib/components/ShareButtons/Telegram.svelte';
   import Twitter from '$lib/components/ShareButtons/Twitter.svelte';
   import Whatsapp from '$lib/components/ShareButtons/Whatsapp.svelte';
   import website from '$lib/config/website';
-  import Telegram from '$lib/components/ShareButtons/Telegram.svelte';
-  import ShareIcon from '$lib/components/Icons/Share.svelte';
-  import { browser } from '$app/env';
 
   const { siteTitle, siteUrl } = website;
 

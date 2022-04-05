@@ -1,12 +1,12 @@
-<script lang="ts">
-  import WhatsappIcon from '$lib/components/Icons/Whatsapp.svelte';
+<script>
   import { browser } from '$app/env';
+  import WhatsappIcon from '$lib/components/Icons/Whatsapp.svelte';
   import { isMobileOrTablet } from '$lib/utilities/device';
 
   const WHATSAPP_GREEN = '#25D366';
 
-  export let url: string;
-  export let title: string;
+  export let url;
+  export let title;
 
   const baseUrl =
     browser && isMobileOrTablet()
