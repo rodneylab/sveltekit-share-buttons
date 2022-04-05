@@ -1,7 +1,7 @@
 <script>
   import Icon, { addCollection } from '@iconify/svelte/dist/OfflineIcon.svelte';
 
-  export let label = 'Whatsapp  icon';
+  export let label = 'Whatsapp icon';
   export let colour = 'inherit';
   export let ariaHidden = false;
   export let width = 48;

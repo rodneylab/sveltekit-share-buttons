@@ -1,7 +1,7 @@
 <script>
   import FacebookIcon from '$lib/components/Icons/Facebook.svelte';
-  export let hashtag = undefined;
-  export let quote = undefined;
+  export let hashtag = '';
+  export let quote = '';
   export let url;
 
   const FACEBOOK_BLUE = '#3b5998';
@@ -9,8 +9,8 @@
   const baseUrl = 'https://www.facebook.com/sharer/sharer.php';
   const parametersObject = {
     u: url,
-    quote,
-    hashtag,
+    ...(quote !== '' ? { quote } : {}),
+    ...(hashtag !== '' ? { hashtag } : {}),
   };
 
   const params = Object.entries(parametersObject)

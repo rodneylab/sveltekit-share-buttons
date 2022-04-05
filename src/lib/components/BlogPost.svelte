@@ -1,8 +1,8 @@
 <script>
-  import readingTime from 'reading-time';
   import BannerImage from '$lib/components/BannerImage.svelte';
   import SEO from '$lib/components/SEO/index.svelte';
   import ShareButtons from '$lib/components/ShareButtons/index.svelte';
+  import readingTime from 'reading-time';
 
   export let imageData;
   export let post;
