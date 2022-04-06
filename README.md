@@ -35,4 +35,4 @@ pnpm run build
 
 > You can preview the built app with `pnpm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
 
-CREDIT: button sharing code baased on https://github.com/nygardk/react-share by Klaus Nygård.
+CREDIT: button sharing code based on https://github.com/nygardk/react-share by Klaus Nygård.
