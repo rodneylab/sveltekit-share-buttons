@@ -52,6 +52,7 @@
     "svelte-preprocess": "^4.10.6",
     "svelte-preprocess-import-assets": "^0.1.6",
     "vanilla-lazyload": "^17.8.1",
+    "vite": "^2.9.13",
     "vite-imagetools": "^4.0.3"
   },
   "repository": {
@@ -66,5 +67,8 @@
     "s": "^1.0.0",
     "spnpm": "^1.0.0",
     "uninstall": "^0.0.0"
+  },
+  "peerDependencies": {
+    "vite": "^2.9.13"
   }
 }
