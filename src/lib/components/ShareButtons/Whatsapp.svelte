@@ -1,5 +1,5 @@
 <script>
-  import { browser } from '$app/env';
+  import { browser } from '$app/environment';
   import WhatsappIcon from '$lib/components/Icons/Whatsapp.svelte';
   import { isMobileOrTablet } from '$lib/utilities/device';
 

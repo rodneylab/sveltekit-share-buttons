@@ -1,5 +1,5 @@
 <script>
-  import { browser } from '$app/env';
+  import { browser } from '$app/environment';
   import ShareIcon from '$lib/components/Icons/Share.svelte';
   import Facebook from '$lib/components/ShareButtons/Facebook.svelte';
   import Telegram from '$lib/components/ShareButtons/Telegram.svelte';

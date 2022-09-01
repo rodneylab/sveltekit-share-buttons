@@ -6,7 +6,7 @@ specifiers:
   '@fontsource/lora': ^4.5.9
   '@fontsource/source-sans-pro': ^4.5.9
   '@iconify/svelte': ^2.2.1
-  '@rodneylab/sveltekit-components': ^0.2.12
+  '@rodneylab/sveltekit-components': ^1.0.0
   '@sveltejs/adapter-static': ^1.0.0-next.31
   '@sveltejs/kit': ^1.0.0-next.338
   '@types/object-hash': ^2.2.1
@@ -46,7 +46,7 @@ devDependencies:
   '@fontsource/lora': 4.5.11
   '@fontsource/source-sans-pro': 4.5.11
   '@iconify/svelte': 2.2.1
-  '@rodneylab/sveltekit-components': 0.2.16_g3iym72mcpjdqubp73far77gvu
+  '@rodneylab/sveltekit-components': 1.0.0_g3iym72mcpjdqubp73far77gvu
   '@sveltejs/adapter-static': 1.0.0-next.41
   '@sveltejs/kit': 1.0.0-next.460_fhgkwirxvgjw2igda6zmhiisma
   '@types/object-hash': 2.2.1
@@ -397,8 +397,8 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@rodneylab/sveltekit-components/0.2.16_g3iym72mcpjdqubp73far77gvu:
-    resolution: {integrity: sha512-5O3y1A020jTGdC6FRItGSo1I/+kQlGhQNKlQRamy0M/d1Xciubh5c152BreFWUfui9qi4c2x5Wsr7uBdPWlu8Q==}
+  /@rodneylab/sveltekit-components/1.0.0_g3iym72mcpjdqubp73far77gvu:
+    resolution: {integrity: sha512-2SrnDXoShFWqQu6wf9BUHHX279RD3kRReGo7aRujHwJhmvQa9J/MvJPSzivrTbUACqayg3n6XmQaQzSUbYSErA==}
     peerDependencies:
       leaflet: ^1.8.0
       vite: ^3.0.3
