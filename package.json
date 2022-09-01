@@ -2,9 +2,9 @@
   "name": "sveltekit-blog-mdx",
   "version": "2.0.0",
   "scripts": {
-    "dev": "vite dev --port 3000",
+    "dev": "vite dev",
     "build": "npm run generate:manifest && vite build",
-    "preview": "vite preview --port 3000",
+    "preview": "vite preview",
     "check": "svelte-check --fail-on-hints",
     "check:watch": "svelte-check --watch",
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
@@ -34,25 +34,26 @@
     "eslint-plugin-svelte3": "^4.0.0",
     "front-matter": "^4.0.2",
     "husky": "^8.0.1",
+    "leaflet": "^1.8.0",
     "mdsvex": "^0.10.5",
     "object-hash": "^3.0.0",
     "postcss": "^8.4.14",
     "postcss-html": "^1.4.1",
-    "prettier": "~2.6.2",
+    "prettier": "~2.7.1",
     "prettier-plugin-svelte": "^2.7.0",
     "reading-time": "1.4.0",
     "sass": "^1.52.1",
-    "sharp": "^0.29.3",
+    "sharp": "^0.30.7",
     "stylelint": "^14.8.3",
-    "stylelint-config-recommended-scss": "^6.0.0",
-    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-recommended-scss": "^7.0.0",
+    "stylelint-config-standard": "^28.0.0",
     "stylelint-scss": "^4.2.0",
     "svelte": "^3.48.0",
     "svelte-check": "^2.7.1",
     "svelte-preprocess": "^4.10.6",
     "svelte-preprocess-import-assets": "^0.1.6",
     "vanilla-lazyload": "^17.8.1",
-    "vite": "^2.9.13",
+    "vite": "^3.1.0-beta.1",
     "vite-imagetools": "^4.0.3"
   },
   "repository": {
@@ -63,12 +64,8 @@
     "url": "https://github.com/rodneylab/sveltekit-blog-mdx/issues"
   },
   "type": "module",
-  "dependencies": {
-    "s": "^1.0.0",
-    "spnpm": "^1.0.0",
-    "uninstall": "^0.0.0"
-  },
   "peerDependencies": {
-    "vite": "^2.9.13"
+    "leaflet": "^1.8.0",
+    "vite": "^3.1.0-beta.1"
   }
 }
