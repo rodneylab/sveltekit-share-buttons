@@ -1,6 +1,8 @@
 {
-	"name": "sveltekit-blog-mdx",
+	"name": "sveltekit-share-buttons",
 	"version": "2.0.0",
+	"license": "BSD-3-Clause",
+	"description": "Svelte share buttons: adding social share buttons to your Svelte app for mobiles and Safari using the native Web Share API with fallbacks.",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -57,10 +59,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/rodneylab/sveltekit-blog-mdx"
+		"url": "https://github.com/rodneylab/sveltekit-share-buttons"
 	},
 	"bugs": {
-		"url": "https://github.com/rodneylab/sveltekit-blog-mdx/issues"
+		"url": "https://github.com/rodneylab/sveltekit-share-buttons/issues"
 	},
 	"type": "module",
 	"peerDependencies": {
