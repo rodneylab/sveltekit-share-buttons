@@ -1,11 +1,11 @@
 <script>
-	import lazyload from 'vanilla-lazyload';
 	import { browser } from '$app/environment';
-
-	import '$lib/styles/normalise.css';
-	import '$lib/styles/index.scss';
 	import BlogPost from '$lib/components/BlogPost.svelte';
+	import '$lib/styles/index.scss';
+	import '$lib/styles/normalise.css';
+	import lazyload from 'vanilla-lazyload';
 
+	/** @type {import('./$types').PageData} */
 	export let data;
 
 	const { page, post, imageData } = data;
