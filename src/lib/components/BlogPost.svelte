@@ -39,19 +39,19 @@
 		? {
 				url: ogImage,
 				alt: featuredImageAlt,
-		  }
+			}
 		: null;
 	const ogSquareImageObject = ogSquareImage
 		? {
 				url: ogSquareImage,
 				alt: featuredImageAlt,
-		  }
+			}
 		: null;
 	const twitterImageObject = twitterImage
 		? {
 				url: twitterImage,
 				alt: featuredImageAlt,
-		  }
+			}
 		: null;
 </script>
 
