@@ -5,23 +5,25 @@
 
 	const WHATSAPP_GREEN = '#25D366';
 
-	export let url;
-	export let title;
+	let { url, title } = $props();
 
-	const baseUrl =
+	const baseUrl = $derived(
 		browser && isMobileOrTablet()
 			? 'https://api.whatsapp.com/send'
-			: 'https://web.whatsapp.com/send';
-	const parametersObject = {
+			: 'https://web.whatsapp.com/send',
+	);
+	const parametersObject = $derived({
 		text: title ? title + ' ' + url : url,
-	};
+	});
 
-	const params = Object.entries(parametersObject)
-		.filter(([, value]) => value ?? false)
-		.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)
-		.join('&');
+	const params = $derived(
+		Object.entries(parametersObject)
+			.filter(([, value]) => value ?? false)
+			.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)
+			.join('&'),
+	);
 
-	const urlWithParameters = params === '' ? baseUrl : `${baseUrl}?${params}`;
+	const urlWithParameters = $derived(params === '' ? baseUrl : `${baseUrl}?${params}`);
 
 	function handleClick() {
 		const config = {
@@ -47,7 +49,7 @@
 	}
 </script>
 
-<button on:click={handleClick}
+<button onclick={handleClick}
 	><span class="screen-reader-text">Share on Whatsapp</span><WhatsappIcon
 		colour={WHATSAPP_GREEN}
 		width={48}
@@ -71,10 +73,10 @@
 		transform: scale(1.1);
 	}
 
-	@media screen and (max-width: $desktop-breakpoint) {
+	@media screen and (max-width: variables.$desktop-breakpoint) {
 		button {
-			padding-left: $spacing-2;
-			padding-right: $spacing-2;
+			padding-left: variables.$spacing-2;
+			padding-right: variables.$spacing-2;
 		}
 	}
 </style>

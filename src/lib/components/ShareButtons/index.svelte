@@ -9,12 +9,10 @@
 
 	const { siteTitle, siteUrl } = website;
 
-	export let slug;
-	export let title;
+	let { slug, title } = $props();
 
-	$: webShareAPISupported = browser && typeof navigator.share !== 'undefined';
+	let webShareAPISupported = $state(browser && typeof navigator.share !== 'undefined');
 
-	$: handleWebShare;
 	const handleWebShare = async () => {
 		try {
 			navigator.share({
@@ -22,18 +20,18 @@
 				text: `Shared from ${siteTitle}`,
 				url,
 			});
-		} catch (error) {
+		} catch {
 			webShareAPISupported = false;
 		}
 	};
-	const url = `${siteUrl}/${slug}`;
+	let url = $derived(`${siteUrl}/${slug}`);
 </script>
 
 <aside class="container">
 	<div class="wrapper">
 		Share: <div class="buttons">
 			{#if webShareAPISupported}
-				<button on:click={handleWebShare}
+				<button onclick={handleWebShare}
 					><span class="screen-reader-text">Share</span><ShareIcon width={48} /></button
 				>
 			{:else}
@@ -47,18 +45,18 @@
 	.container {
 		display: flex;
 		flex-direction: row;
-		margin-top: $spacing-12;
-		width: $max-width-full;
+		margin-top: variables.$spacing-12;
+		width: variables.$max-width-full;
 	}
 	.wrapper {
 		display: flex;
 		flex-direction: row;
 		margin-left: auto;
-		font-weight: $font-weight-bold;
-		font-size: $font-size-2;
+		font-weight: variables.$font-weight-bold;
+		font-size: variables.$font-size-2;
 	}
 	.buttons {
-		margin-left: $spacing-4;
+		margin-left: variables.$spacing-4;
 	}
 
 	button {

@@ -3,7 +3,7 @@
 	import { browser } from '$app/environment';
 	import { Image } from '@rodneylab/sveltekit-components';
 
-	export let imageData;
+	let { imageData } = $props();
 
 	onMount(() => {
 		if (browser) {
@@ -24,5 +24,5 @@
 	{sources}
 	{placeholder}
 	{sizes}
-	style={'border-radius:12px;margin-bottom:48px'}
+	style="border-radius:12px;margin-bottom:48px"
 />

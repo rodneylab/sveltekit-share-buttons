@@ -5,7 +5,7 @@ export async function dominantColour({ source }) {
 		const image = sharp(source);
 		const { dominant } = await image.stats();
 		return dominant;
-	} catch (error) {
+	} catch {
 		console.error('Error determining dominant colour: ', source);
 	}
 }
@@ -24,8 +24,8 @@ export async function lowResolutionPlaceholder({ source }) {
 				quantisationTable: 2,
 			})
 			.toBuffer({ resolveWithObject: false });
-		return `data:image/jpeg;base64,${(await buffer).toString('base64')}`;
-	} catch (error) {
+		return `data:image/jpeg;base64,${buffer.toString('base64')}`;
+	} catch {
 		console.error('Error generating low resolution placeholder: ', source);
 	}
 }
@@ -35,7 +35,7 @@ export async function metadata({ source }) {
 		const image = sharp(source);
 		const { format, height, width } = await image.metadata();
 		return { format, height, width };
-	} catch (error) {
+	} catch {
 		console.error('Error determining image meta: ', source);
 	}
 }

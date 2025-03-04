@@ -1,23 +1,24 @@
 <script>
 	import TelegramIcon from '$lib/components/Icons/Telegram.svelte';
 
-	export let url;
-	export let title;
+	let { url, title } = $props();
 
 	const TELEGRAM_BLUE = '#49a9e9';
 
 	const baseUrl = 'https://telegram.me/share/url';
-	const parametersObject = {
+	let parametersObject = $derived({
 		url,
 		text: title,
-	};
+	});
 
-	const params = Object.entries(parametersObject)
-		.filter(([, value]) => value ?? false)
-		.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)
-		.join('&');
+	const params = $derived(
+		Object.entries(parametersObject)
+			.filter(([, value]) => value ?? false)
+			.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)
+			.join('&'),
+	);
 
-	const urlWithParameters = params === '' ? baseUrl : `${baseUrl}?${params}`;
+	const urlWithParameters = $derived(params === '' ? baseUrl : `${baseUrl}?${params}`);
 
 	function handleClick() {
 		const config = {
@@ -43,7 +44,7 @@
 	}
 </script>
 
-<button on:click={handleClick}
+<button onclick={handleClick}
 	><span class="screen-reader-text">Share on Telegram</span><TelegramIcon
 		colour={TELEGRAM_BLUE}
 		width={48}
@@ -51,8 +52,6 @@
 >
 
 <style lang="scss">
-	@import '../../styles/variables';
-
 	button {
 		background: transparent;
 		border-style: none;
@@ -70,10 +69,10 @@
 		transform: scale(1.1);
 	}
 
-	@media screen and (max-width: $desktop-breakpoint) {
+	@media screen and (max-width: variables.$desktop-breakpoint) {
 		button {
-			padding-left: $spacing-2;
-			padding-right: $spacing-2;
+			padding-left: variables.$spacing-2;
+			padding-right: variables.$spacing-2;
 		}
 	}
 </style>

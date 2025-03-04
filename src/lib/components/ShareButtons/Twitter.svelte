@@ -1,12 +1,14 @@
 <script>
 	import TwitterIcon from '$lib/components/Icons/Twitter.svelte';
 
-	export let hashtags = []; // array of hashtags exclude '#' e.g. ['svelte', 'askRodney']
-	export let quote = undefined;
-	export let related = []; // array of Twitter users (including '@')
-	export let title; // text in Tweet
-	export let url;
-	export let via = ''; // include '@' e.g. '@askRodney'
+	let {
+		hashtags = [], // array of hashtags exclude '#' e.g. ['svelte', 'askRodney']
+		quote = undefined,
+		related = [], // array of Twitter users (including '@')
+		title, // text in Tweet
+		url,
+		via = '',
+	} = $props(); // include '@' e.g. '@askRodney'
 
 	const TWITTER_BLUE = '#00aced';
 
@@ -20,12 +22,14 @@
 		...(via.length > 0 ? { via: via.slice(1) } : {}),
 	};
 
-	const params = Object.entries(parametersObject)
-		.filter(([, value]) => value ?? false)
-		.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)
-		.join('&');
+	const params = $derived(
+		Object.entries(parametersObject)
+			.filter(([, value]) => value ?? false)
+			.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)
+			.join('&'),
+	);
 
-	const urlWithParameters = params === '' ? baseUrl : `${baseUrl}?${params}`;
+	const urlWithParameters = $derived(params === '' ? baseUrl : `${baseUrl}?${params}`);
 
 	function handleClick() {
 		const config = {
@@ -51,7 +55,7 @@
 	}
 </script>
 
-<button on:click={handleClick}
+<button onclick={handleClick}
 	><span class="screen-reader-text">Share on Twitter</span><TwitterIcon
 		colour={TWITTER_BLUE}
 		width={48}
@@ -74,10 +78,10 @@
 	button:hover {
 		transform: scale(1.1);
 	}
-	@media screen and (max-width: $desktop-breakpoint) {
+	@media screen and (max-width: variables.$desktop-breakpoint) {
 		button {
-			padding-left: $spacing-2;
-			padding-right: $spacing-2;
+			padding-left: variables.$spacing-2;
+			padding-right: variables.$spacing-2;
 		}
 	}
 </style>
