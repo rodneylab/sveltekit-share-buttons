@@ -92,8 +92,8 @@
 
 			li {
 				display: inline;
-				padding-left: $spacing-2;
-				font-size: $font-size-2;
+				padding-left: variables.$spacing-2;
+				font-size: variables.$font-size-2;
 			}
 		}
 	}
@@ -102,6 +102,6 @@
 		vertical-align: middle;
 	}
 	.contact-address {
-		margin-left: $spacing-2;
+		margin-left: variables.$spacing-2;
 	}
 </style>

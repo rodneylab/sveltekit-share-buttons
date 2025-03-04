@@ -2,10 +2,8 @@
 	import BannerImage from '$lib/components/BannerImage.svelte';
 	import SEO from '$lib/components/SEO/index.svelte';
 	import ShareButtons from '$lib/components/ShareButtons/index.svelte';
-	import readingTime from 'reading-time';
 
-	export let imageData;
-	export let post;
+	let { imageData, post, sanitisedHtml } = $props();
 
 	const {
 		datePublished,
@@ -73,3 +71,5 @@
 <BannerImage {imageData} />
 <h1>{title}</h1>
 <ShareButtons {slug} {title} />
+<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+{@html sanitisedHtml}
